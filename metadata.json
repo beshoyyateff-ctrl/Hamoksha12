@@ -1,0 +1,6 @@
+{
+  "name": "حموكشة للدعاية وإعلانات المشروعات الصغيرة",
+  "description": "الموقع الرسمي لحموكشة المتخصص في عمل الإعلانات ودعم وتكبير المشروعات الصغيرة والناشئة في محافظة سوهاج وجهينة ومراكزها.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   HAMOKSHA LEMON-YELLOW DESIGN SYSTEM (CSS VARIABLES)
+   Restful editorial balance across Lemon, Olive, Gold, and Deep Citrus-Obsidian
+   ========================================================================== */
+:root {
+  /* Backgrounds & Canvases (Balanced alternates — zero harsh glaring neon walls, zero pure #fff) */
+  --bg-page: #151c07;              /* Deep olive obsidian canvas */
+  --bg-section-dark: #1a2209;      /* Primary dark olive section */
+  --bg-section-olive: #212b0c;     /* Elevated dark olive section */
+  --bg-section-soft: #eef2cc;      /* Soft muted lemon mist (comfortable bright contrast band) */
+  --bg-card-dark: #222d0d;         /* Card on dark section (subtle delta) */
+  --bg-card-elevated: #2b3812;     /* Inputs, nested blocks, interactive tiles */
+  --bg-card-soft: #e2e8b0;         /* Card on soft lemon band */
+
+  /* Lemon Yellow Family Accents & Hierarchy */
+  --lemon-primary: #d8e832;        /* Primary Lemon Yellow for key CTAs & focus */
+  --lemon-primary-hover: #e5f34b;
+  --lemon-bright: #eef778;         /* Highlighted lemon text on dark surfaces */
+  --lemon-gold: #d6b21d;           /* Golden-lemon for stars, ratings, awards */
+  --lemon-olive: #91a321;          /* Olive-yellow for subtle metadata & icons */
+  --lemon-olive-deep: #465410;     /* Deep olive fill for soft badges/controls */
+  --lemon-soft-tint: #f4f7dc;      /* Warm light lemon-ivory text tint */
+
+  /* Readable Contrast Typography */
+  --text-on-dark: #f2f5d5;         /* Soft lemon-ivory (zero stark pure white glare) */
+  --text-muted-on-dark: #c4cd8b;   /* Body copy on dark olive */
+  --text-dim-on-dark: #97a35a;     /* Subtle dates & secondary metadata */
+  --text-on-light: #171f06;        /* Deep olive ink for soft-lemon sections */
+  --text-muted-on-light: #3d4b13;  /* Secondary body copy on soft-lemon sections */
+
+  /* Borders & Hairlines */
+  --border-subtle: rgba(216, 232, 50, 0.16);
+  --border-medium: rgba(216, 232, 50, 0.34);
+  --border-strong: rgba(216, 232, 50, 0.65);
+  --border-on-light: rgba(52, 66, 13, 0.18);
+
+  /* Header Surface */
+  --header-bg: rgba(21, 28, 7, 0.92);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Alexandria', 'Cairo', system-ui, -apple-system, sans-serif;
+    width: 100%;
+    font-size: 15px;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    touch-action: pan-x pan-y;
+    background-color: var(--bg-page);
+    color: var(--text-on-dark);
+  }
+
+  body {
+    direction: rtl;
+    text-align: right;
+    width: 100%;
+    overflow-x: clip;
+    position: relative;
+    background-color: var(--bg-page);
+    color: var(--text-on-dark);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: pan-x pan-y;
+    line-height: 1.6;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: clip;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--lemon-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Mobile-Only Exact Phone Shell & Inner Container */
+.phone-shell {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin-inline: auto;
+  background-color: var(--bg-page);
+  box-shadow: 0 0 0 1px var(--border-subtle);
+}
+
+.site-container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 14px;
+}
+
+/* Section Rhythms */
+.section-dark {
+  background-color: var(--bg-section-dark);
+  color: var(--text-on-dark);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section-olive {
+  background-color: var(--bg-section-olive);
+  color: var(--text-on-dark);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section-soft {
+  background-color: var(--bg-section-soft);
+  color: var(--text-on-light);
+  border-top: 1px solid var(--border-on-light);
+}
+
+/* Balanced Cards (Single-level depth, hairline borders) */
+.card-dark {
+  background-color: var(--bg-card-dark);
+  color: var(--text-on-dark);
+  border: 1px solid var(--border-subtle);
+}
+
+.card-dark-interactive {
+  background-color: var(--bg-card-dark);
+  color: var(--text-on-dark);
+  border: 1px solid var(--border-subtle);
+  transition: border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-dark-interactive:hover {
+  border-color: var(--border-medium);
+}
+
+.card-soft {
+  background-color: var(--bg-card-soft);
+  color: var(--text-on-light);
+  border: 1px solid var(--border-on-light);
+}
+
+/* Lemon CTA & Secondary Buttons */
+.btn-lemon-primary {
+  background: linear-gradient(135deg, #eef768 0%, #d8e832 55%, #b9cc1b 100%);
+  color: #141b05;
+  font-weight: 800;
+  border: 1px solid rgba(238, 247, 120, 0.6);
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), filter 160ms ease;
+}
+
+.btn-lemon-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-lemon-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-lemon-secondary {
+  background-color: var(--bg-card-elevated);
+  color: var(--lemon-bright);
+  font-weight: 700;
+  border: 1px solid var(--border-medium);
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.btn-lemon-secondary:hover {
+  background-color: #344416;
+  border-color: var(--lemon-primary);
+}
+
+.btn-dark-on-soft {
+  background-color: #1c2509;
+  color: #eef778;
+  font-weight: 800;
+  border: 1px solid #354412;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.btn-dark-on-soft:hover {
+  background-color: #26330c;
+}
+
+/* Input Controls */
+.input-lemon {
+  background-color: var(--bg-card-elevated);
+  color: var(--text-on-dark);
+  border: 1px solid var(--border-medium);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.input-lemon::placeholder {
+  color: var(--text-dim-on-dark);
+}
+
+.input-lemon:focus {
+  outline: none;
+  border-color: var(--lemon-primary);
+  box-shadow: 0 0 0 2px rgba(216, 232, 50, 0.18);
+}
+
+/* Compatibility alias for any legacy references */
+.lemon-gradient-btn {
+  background: linear-gradient(135deg, #eef768 0%, #d8e832 55%, #b9cc1b 100%);
+  color: #141b05;
+  font-weight: 800;
+}
+
+/* Subtle Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a4913;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #556a1c;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
